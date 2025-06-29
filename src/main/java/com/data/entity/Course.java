@@ -14,11 +14,14 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @Column(name = "course_name", nullable = false, length = 100)
+    @Column(name = "course_name",unique = true ,nullable = false, length = 100)
     String courseName;
 
+    @Column(name = "sessions",nullable = false)
+    int sessions = 0;
+
     @Column(name = "hours", nullable = false)
-    int hours;
+    int hours = 0;
 
     @ManyToOne
     @JoinColumn(name = "category_id")

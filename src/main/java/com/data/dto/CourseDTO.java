@@ -14,5 +14,7 @@ public class CourseDTO {
 
     int hours;
 
+    int sessions;
+
     String categoryName;
 }

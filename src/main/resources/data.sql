@@ -10,10 +10,9 @@ INSERT INTO category (category_name) VALUES
                                          ('Data Science'),
                                          ('Mobile Development');
 
-
-INSERT INTO course (course_name, hours, category_id) VALUES
-                                                         ('Java Web Spring Boot', 40, 1),
-                                                         ('Python for Data Science', 50, 2),
-                                                         ('React Native App', 30, 3),
-                                                         ('Machine Learning Basics', 45, 2);
+INSERT INTO course (course_name, sessions ,hours, category_id) VALUES
+                                                         ('Java Web Spring Boot', 20, 40, 1),
+                                                         ('Python for Data Science', 25, 50, 2),
+                                                         ('React Native App', 15, 30, 3),
+                                                         ('Machine Learning Basics', 20, 45, 2);
  */

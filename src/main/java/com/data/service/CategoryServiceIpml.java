@@ -47,4 +47,16 @@ public class CategoryServiceIpml implements CategoryService{
         categoryRepository.deleteById(id);
         return true;
     }
+
+    @Override
+    public boolean existCategory(int id) {
+        return categoryRepository.existsById(id);
+    }
+
+    @Override
+    public Category getById(int id) {
+        return categoryRepository.findById(id).orElse(null);
+    }
+
+
 }
