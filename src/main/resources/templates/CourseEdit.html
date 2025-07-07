@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉnh sửa khoá học</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.15.4/css/all.css}"/>
+    <script th:src="@{/webjars/jquery/3.6.3/jquery.min.js}"></script>
+</head>
+<body>
+    <h4>Chỉnh sửa khoá học</h4>
+    <form th:action="@{/courses/edit/{id}(id=${courseId})}" th:object="${courseCreateDTO}" method="post">
+        <div class="mb-2">
+            <label for="courseName">Tên khoá học</label>
+            <input type="text" th:field="*{courseName}" class="form-control" required />
+        </div>
+
+        <div class="mb-2">
+            <label for="sessions">Số buổi</label>
+            <input type="number" th:field="*{sessions}" class="form-control" required />
+        </div>
+
+        <div class="mb-2">
+            <label for="hours">Số giờ</label>
+            <input type="number" th:field="*{hours}" class="form-control" required />
+        </div>
+
+        <div class="mb-2">
+            <label for="categoryId">Thể loại</label>
+            <select th:field="*{categoryId}" class="form-control" required>
+                <option value="">--Chọn thể loại--</option>
+                <option th:each="cat : ${categories}"
+                        th:value="${cat.id}"
+                        th:text="${cat.categoryName}">
+                </option>
+            </select>
+        </div>
+
+        <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+        <button type="submit" class="btn btn-success">Cập nhật</button>
+        <a href="/courses/list" class="btn btn-secondary">Huỷ</a>
+    </form>
+</body>
+</html> 

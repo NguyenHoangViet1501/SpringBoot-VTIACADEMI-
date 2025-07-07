@@ -29,6 +29,7 @@ public enum ErrorCode {
 
     //login
     USERNAME_AND_PASSWORD_REQUIRED(1013, "Username and password must not be null", HttpStatus.BAD_REQUEST),
+    USERNAME_OR_PASSWORD_INCORRECT(1014,"Username or password is incorrect", HttpStatus.BAD_REQUEST),
 
     //Course
     //course_name

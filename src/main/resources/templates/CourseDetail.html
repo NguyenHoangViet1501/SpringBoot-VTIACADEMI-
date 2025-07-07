@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết khoá học</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.15.4/css/all.css}"/>
+    <script th:src="@{/webjars/jquery/3.6.3/jquery.min.js}"></script>
+</head>
+<body>
+    <h4>Chi tiết khoá học</h4>
+    <div>
+        <strong>ID:</strong> <span th:text="${course.id}"></span><br/>
+        <strong>Tên khoá học:</strong> <span th:text="${course.courseName}"></span><br/>
+        <strong>Số buổi:</strong> <span th:text="${course.sessions}"></span><br/>
+        <strong>Số giờ:</strong> <span th:text="${course.hours}"></span><br/>
+        <strong>Thể loại:</strong> <span th:text="${course.category.categoryName}"></span><br/>
+    </div>
+    <a href="/courses/list" class="btn btn-secondary mt-2">Quay lại danh sách</a>
+</body>
+</html> 

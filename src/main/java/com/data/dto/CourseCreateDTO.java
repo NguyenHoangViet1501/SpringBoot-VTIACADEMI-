@@ -10,18 +10,18 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CourseCrerateDTO {
+public class CourseCreateDTO {
 
     @NotBlank(message = "COURSE_NAME_REQUIRED")
     @Size(min = 2, max = 100, message = "INVALID_COURSE_NAME_LENGTH")
     String courseName;
 
     @Min(value = 0, message = "INVALID_HOURS")
-    int hours;
+    Integer hours;
 
     @Min(value = 0, message = "INVALID_SESSION_COUNT")
-    int sessions;
+    Integer sessions;
 
     @NotNull(message = "CATEGORY_NOT_FOUND")
-    int categoryId;
+    Integer categoryId;
 }
